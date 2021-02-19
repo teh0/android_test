@@ -13,6 +13,7 @@ import androidx.test.espresso.ViewAssertion;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
+// TODO Convertir en Kotlin
 public class RecyclerViewUtils {
 
     public static class ItemCount implements ViewAssertion {

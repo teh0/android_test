@@ -22,6 +22,7 @@ import static com.openclassrooms.magicgithub.utils.RecyclerViewUtils.clickChildV
  */
 @RunWith(AndroidJUnit4.class)
 @LargeTest
+// TODO Convertir en Kotlin
 public class UserListInstrumentedTest {
 
     @Rule

@@ -25,6 +25,7 @@ import static org.junit.Assert.assertTrue;
  * Testing UserRepository.
  */
 @RunWith(JUnit4.class)
+// TODO Convertir en Kotlin
 public class UserRepositoryTest {
 
     private UserRepository userRepository;
