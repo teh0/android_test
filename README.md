@@ -18,3 +18,7 @@ Les objectifs principaux de ce TP sont :
 ## Comment procéder ?
 1. Forker le repository dans votre espace personnel
 2. Identifier les TODO et les corriger
+
+## Rendu 
+1. Générer un rapport des tests unitaires et instrumentaires en HTML et les sauvegarder dans un repertoire ```results``` du projet. Ne pas oublier de commiter le dossier ```result```
+3. Ajouter le lien vers le repo github sur Trello
