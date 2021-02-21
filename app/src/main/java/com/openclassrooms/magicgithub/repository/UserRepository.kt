@@ -7,14 +7,16 @@ class UserRepository(private val apiService: ApiService) {
 
     val users: List<User>
         get() {
-            TODO("A modifier")
+            return this.apiService.getUsers()
         }
 
     fun generateRandomUser() {
-        TODO("A modifier")
+        this.apiService.generateRandomUser()
     }
 
     fun deleteUser(user: User?) {
-        TODO("A modifier")
+        if (user != null) {
+            this.apiService.deleteUser(user)
+        }
     }
 }
