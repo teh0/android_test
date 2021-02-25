@@ -18,7 +18,7 @@ class UserListAdapter(private val callback: Listener) : RecyclerView.Adapter<Lis
 
     // FOR DATA ---
     // TODO Ne doit pas être un var
-    private var users: List<User> = ArrayList()
+    private var users: MutableList<User> = ArrayList()
 
     interface Listener {
         fun onClickDelete(user: User)
@@ -39,7 +39,7 @@ class UserListAdapter(private val callback: Listener) : RecyclerView.Adapter<Lis
     }
 
     // PUBLIC API ---
-    fun updateList(newList: List<User>) {
+    fun updateList(newList: MutableList<User>) {
         val diffResult = DiffUtil.calculateDiff(UserDiffCallback(newList, users))
         users = ArrayList(newList)
         diffResult.dispatchUpdatesTo(this)

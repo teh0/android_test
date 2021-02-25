@@ -5,7 +5,7 @@ import com.openclassrooms.magicgithub.model.User
 
 class UserRepository(private val apiService: ApiService) {
 
-    val users: List<User>
+    val users: MutableList<User>
         get() {
             return this.apiService.getUsers()
         }
