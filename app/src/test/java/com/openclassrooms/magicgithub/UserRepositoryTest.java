@@ -10,6 +10,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,8 +30,15 @@ import static org.junit.Assert.assertTrue;
 public class UserRepositoryTest {
 
     private UserRepository userRepository;
-    private List<User> FAKE_USERS = FakeApiServiceGenerator.INSTANCE.getFAKE_USERS();
-    private List<User> FAKE_USERS_RANDOM = FakeApiServiceGenerator.INSTANCE.getFAKE_USERS_RANDOM();
+    /**
+     * I add modifications here (new ArrayList) because every instance of repository will delegate responsibility to
+     * fakeApiService which use static FakeApiServiceGenerator reference. So we need to copy value
+     * of List returned by `FakeApiServiceGenerator.INSTANCE.getFAKE_USERS` and
+     * `FakeApiServiceGenerator.INSTANCE.getFAKE_USERS_RANDOM` to avoid mutate these values when we
+     * will do userRepository.getUsers().clear();
+     */
+    private List<User> FAKE_USERS = new ArrayList<User>(FakeApiServiceGenerator.INSTANCE.getFAKE_USERS());
+    private List<User> FAKE_USERS_RANDOM = new ArrayList<User>(FakeApiServiceGenerator.INSTANCE.getFAKE_USERS_RANDOM());
 
     @Before
     public void setup() {
