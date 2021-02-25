@@ -14,9 +14,6 @@ import com.openclassrooms.magicgithub.di.Injection
 import com.openclassrooms.magicgithub.model.User
 import com.openclassrooms.magicgithub.repository.UserRepository
 
-// TODO Déplacer la logique dans un fragment
-// TODO Utiliser le view binding
-
 class ListUserActivity : AppCompatActivity() {
     @VisibleForTesting
     lateinit var repository: UserRepository

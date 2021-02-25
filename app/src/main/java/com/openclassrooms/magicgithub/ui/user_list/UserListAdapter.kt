@@ -5,10 +5,17 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.openclassrooms.magicgithub.R
+import com.openclassrooms.magicgithub.databinding.ActivityListUserBinding
+import com.openclassrooms.magicgithub.databinding.ItemListUserBinding
 import com.openclassrooms.magicgithub.model.User
 import com.openclassrooms.magicgithub.utils.UserDiffCallback
 
 class UserListAdapter(private val callback: Listener) : RecyclerView.Adapter<ListUserViewHolder>() {
+
+    // * View binding
+    private var _binding: ItemListUserBinding? = null
+    private val binding get() = _binding!!
+
     // FOR DATA ---
     // TODO Ne doit pas être un var
     private var users: List<User> = ArrayList()
@@ -17,12 +24,10 @@ class UserListAdapter(private val callback: Listener) : RecyclerView.Adapter<Lis
         fun onClickDelete(user: User)
     }
 
-    // TODO Utiliser le view binding
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListUserViewHolder {
-        val context = parent.context
-        val inflater = LayoutInflater.from(context)
-        val view = inflater.inflate(R.layout.item_list_user, parent, false)
-        return ListUserViewHolder(view)
+        _binding = ItemListUserBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+
+        return ListUserViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ListUserViewHolder, position: Int) {
