@@ -48,7 +48,7 @@ public class UserRepositoryTest {
     public void generateRandomUserWithSuccess() {
         userRepository.getUsers().clear();
         userRepository.generateRandomUser();
-        User user = userRepository.getUsers().get(0);
+        User user = userRepository.getUsers().get(0); // Représente un des user tiré au hasard dans la liste FAKE_USERS_RANDOM
         assertEquals(1, userRepository.getUsers().size());
         assertTrue(FAKE_USERS_RANDOM.stream().map(User::getAvatarUrl).collect(Collectors.toList()).contains(user.getAvatarUrl()));
         assertTrue(FAKE_USERS_RANDOM.stream().map(User::getId).collect(Collectors.toList()).contains(user.getId()));

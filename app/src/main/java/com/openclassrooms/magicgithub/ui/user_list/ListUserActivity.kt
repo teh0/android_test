@@ -25,6 +25,7 @@ class ListUserActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        repository = Injection.createUserRepository()
         _binding = ActivityListUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
